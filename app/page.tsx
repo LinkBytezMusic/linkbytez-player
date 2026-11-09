@@ -22,14 +22,30 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white flex items-center justify-center px-6">
+    <main className="relative min-h-screen flex items-center justify-center px-6 text-white overflow-hidden">
 
-      <div className="w-full max-w-2xl text-center">
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 bg-cover bg-center scale-110"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=2000&q=80')"
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+      {/* GREEN VIBE GLOW */}
+      <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 via-black/60 to-black" />
+
+      {/* CONTENT */}
+      <div className="relative w-full max-w-2xl text-center z-10">
 
         {/* BRAND */}
         <div className="mb-10">
           <h1 className="text-6xl font-black tracking-tight">
-            <span className="text-green-400 drop-shadow-[0_0_20px_rgba(34,197,94,0.6)]">
+            <span className="text-green-400 drop-shadow-[0_0_25px_rgba(34,197,94,0.8)]">
               LINK
             </span>
             BYTEZ
@@ -37,7 +53,7 @@ export default function HomePage() {
 
           <div className="mt-3 h-[2px] w-24 bg-green-400 mx-auto blur-[1px] opacity-70" />
 
-          <p className="text-gray-400 mt-5 text-sm tracking-wide">
+          <p className="text-gray-300 mt-5 text-sm tracking-wide">
             Private music player · Share your sound · Open with code
           </p>
         </div>
@@ -66,7 +82,7 @@ export default function HomePage() {
                 rounded-xl
                 outline-none
                 text-white
-                placeholder:text-gray-600
+                placeholder:text-gray-500
                 focus:border-green-400
                 focus:ring-2
                 focus:ring-green-400/30
@@ -85,7 +101,7 @@ export default function HomePage() {
                 px-6
                 rounded-xl
                 font-bold
-                shadow-[0_0_20px_rgba(34,197,94,0.4)]
+                shadow-[0_0_25px_rgba(34,197,94,0.5)]
               "
             >
               OPEN
@@ -93,15 +109,14 @@ export default function HomePage() {
 
           </div>
 
-          {/* hint */}
           <div className="mt-4 text-xs text-gray-500">
             Supports: direct code or full LinkBytez URL
           </div>
 
         </div>
 
-        {/* FOOTER STYLE GLOW */}
-        <div className="mt-10 text-xs text-gray-600">
+        {/* FOOTER */}
+        <div className="mt-10 text-xs text-gray-500">
           Powered by LinkBytez Player System
         </div>
 
